@@ -1,0 +1,150 @@
+{
+  "id": "tecnologias-web",
+  "name": "Tecnologías Web",
+  "code": "GIIS-TW",
+  "degree": "Grado en Ingeniería Informática del Software",
+  "academicYear": "2026-2027",
+  "sourcePdf": "guias-docentes/TecnologiasWeb.pdf",
+  "description": "Evaluación con gran peso práctico (80% Prácticas con entregas y exámenes, 20% Teoría), con requisitos de nota mínima de 4,0 en cada prueba práctica individual y 5,0 de media.",
+  "convocatorias": {
+    "ordinaria": {
+      "id": "ordinaria",
+      "name": "Convocatoria Ordinaria",
+      "description": "Evaluación continua con entregas, exámenes prácticos y examen final de teoría.",
+      "failPenaltyCap": 4.0,
+      "passingScore": 5.0,
+      "prerequisites": [
+        {
+          "id": "asistencia_activa",
+          "name": "Asistencia Activa a Laboratorios",
+          "description": "Haber completado al menos el 80% de los ejercicios propuestos en las sesiones de laboratorio.",
+          "type": "percentage",
+          "requiredPercentage": 80,
+          "failureMessage": "No se ha completado el 80% de los ejercicios de laboratorio. Se anula la calificación práctica continua."
+        }
+      ],
+      "finalFormulaText": "0,20 · NT + 0,80 · NP  (si NT≥5, NP≥5, nota individual en cada prueba práctica ≥4, y asistencia activa ≥80%)",
+      "blocks": [
+        {
+          "id": "teoria_tw",
+          "name": "Bloque Teórico",
+          "shortName": "NT",
+          "weight": 0.20,
+          "minScore": 5.0,
+          "formulaText": "Examen escrito final de teoría (NT)",
+          "items": [
+            {
+              "id": "nt",
+              "name": "Examen Escrito Final de Teoría",
+              "shortName": "NT",
+              "description": "Examen final sobre los contenidos teóricos de la asignatura. Mínimo obligatorio de 5,0.",
+              "weight": 1.0,
+              "minScore": 5.0,
+              "maxScore": 10.0,
+              "canCarryOver": true
+            }
+          ]
+        },
+        {
+          "id": "practica_tw",
+          "name": "Bloque Práctico (Evaluación Continua)",
+          "shortName": "NP",
+          "weight": 0.80,
+          "minScore": 5.0,
+          "formulaText": "0,20 · EP1 + 0,30 · ExP1 + 0,20 · EP2 + 0,30 · ExP2",
+          "items": [
+            {
+              "id": "ep1",
+              "name": "Entrega Práctica 1",
+              "shortName": "EP1",
+              "description": "Primera entrega de prácticas evaluable. Mínimo individual de 4,0.",
+              "weight": 0.20,
+              "minScore": 4.0,
+              "maxScore": 10.0,
+              "isGroup": true
+            },
+            {
+              "id": "exp1",
+              "name": "Examen Práctico 1",
+              "shortName": "ExP1",
+              "description": "Primer examen individual en laboratorio. Mínimo individual de 4,0.",
+              "weight": 0.30,
+              "minScore": 4.0,
+              "maxScore": 10.0
+            },
+            {
+              "id": "ep2",
+              "name": "Entrega Práctica 2",
+              "shortName": "EP2",
+              "description": "Segunda entrega de prácticas evaluable. Mínimo individual de 4,0.",
+              "weight": 0.20,
+              "minScore": 4.0,
+              "maxScore": 10.0,
+              "isGroup": true
+            },
+            {
+              "id": "exp2",
+              "name": "Examen Práctico 2",
+              "shortName": "ExP2",
+              "description": "Segundo examen individual en laboratorio. Mínimo individual de 4,0.",
+              "weight": 0.30,
+              "minScore": 4.0,
+              "maxScore": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    "extraordinaria": {
+      "id": "extraordinaria",
+      "name": "Convocatoria Extraordinaria",
+      "description": "Examen teórico extraordinario (60%) y conservación de nota práctica continua si NP ≥ 5,0 (40%).",
+      "failPenaltyCap": 4.0,
+      "passingScore": 5.0,
+      "canCarryOverFromOrdinaria": true,
+      "carryOverRulesExplanation": "En extraordinaria no se realizan pruebas en grupo. El valor de NP será 0,0 a no ser que el alumno haya superado las prácticas en la ordinaria (NP ≥ 5,0).",
+      "prerequisites": [],
+      "finalFormulaText": "0,60 · NT_EXT + 0,40 · NP_CONSERVADA  (si NT_EXT ≥ 5,0)",
+      "blocks": [
+        {
+          "id": "teoria_ext_tw",
+          "name": "Bloque Teórico Extraordinario",
+          "shortName": "NT_EXT",
+          "weight": 0.60,
+          "minScore": 5.0,
+          "formulaText": "Examen teórico extraordinario (NT)",
+          "items": [
+            {
+              "id": "nt_ext",
+              "name": "Examen Teórico Extraordinario",
+              "shortName": "NT_EXT",
+              "description": "Examen teórico sobre todo el temario. Requiere nota mínima de 5,0.",
+              "weight": 1.0,
+              "minScore": 5.0,
+              "maxScore": 10.0
+            }
+          ]
+        },
+        {
+          "id": "practica_ext_tw",
+          "name": "Bloque Práctico Conservado",
+          "shortName": "NP_CONSERVADA",
+          "weight": 0.40,
+          "formulaText": "NP ordinaria (conservada sólo si NP ≥ 5,0; si no superada, NP = 0,0)",
+          "items": [
+            {
+              "id": "np_conservada",
+              "name": "Nota Práctica de Evaluación Continua",
+              "shortName": "NP_ORD",
+              "description": "Nota del bloque de prácticas obtenida en la convocatoria ordinaria (conservada si ≥ 5,0)",
+              "weight": 1.0,
+              "minScore": 0.0,
+              "maxScore": 10.0,
+              "canCarryOver": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

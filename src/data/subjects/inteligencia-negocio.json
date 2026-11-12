@@ -1,0 +1,131 @@
+{
+  "id": "inteligencia-negocio",
+  "name": "Inteligencia de Negocio",
+  "code": "GIITIN01-4-006",
+  "degree": "Grado en Ingeniería Informática en Tecnologías de la Información",
+  "academicYear": "2026-2027",
+  "sourcePdf": "guias-docentes/InteligenciaNegocio.pdf",
+  "description": "Evaluación continua dividida en Prácticas (50%, continua 20% y final 30%, mín. 5,0) y Teoría (50%, mín. 5,0). En teoría: si la nota en trabajos de teoría es ≥ 7,0 se exime de examen teórico y los trabajos ponderan el 50%; si es < 7,0 se realiza examen de teoría (15%) y los trabajos ponderan 35%. Es necesario aprobar por separado las partes teórica y práctica.",
+  "convocatorias": {
+    "ordinaria": {
+      "id": "ordinaria",
+      "name": "Convocatoria Ordinaria",
+      "description": "Evaluación continua a lo largo del cuatrimestre con seguimiento práctico y trabajos teóricos.",
+      "failPenaltyCap": 4.0,
+      "passingScore": 5.0,
+      "prerequisites": [],
+      "finalFormulaText": "0,50 · Prácticas + 0,50 · Teoría (si Trabajos ≥ 7: 0,50 · Trabajos; si < 7: 0,35 · Trabajos + 0,15 · Examen). Requiere Prácticas ≥ 5,0 y Teoría ≥ 5,0.",
+      "blocks": [
+        {
+          "id": "practica_in",
+          "name": "Bloque Práctico",
+          "shortName": "PRAC",
+          "weight": 0.50,
+          "minScore": 5.0,
+          "formulaText": "0,40 · Evaluación Continua + 0,60 · Evaluación Final",
+          "items": [
+            {
+              "id": "prac_continua",
+              "name": "Evaluación Formativa y Continua en Prácticas",
+              "shortName": "EC_PRAC",
+              "description": "Seguimiento continuado del trabajo en las sesiones de prácticas de laboratorio (20% del total de la asignatura)",
+              "weight": 0.40,
+              "maxScore": 10.0,
+              "canCarryOver": true
+            },
+            {
+              "id": "prac_final",
+              "name": "Evaluación Final de Prácticas (Producto y Memoria)",
+              "shortName": "EF_PRAC",
+              "description": "Evaluación del producto implementado, memoria técnica y defensa oral en caso necesario (30% del total de la asignatura)",
+              "weight": 0.60,
+              "maxScore": 10.0,
+              "canCarryOver": true
+            }
+          ]
+        },
+        {
+          "id": "teoria_in",
+          "name": "Bloque Teórico",
+          "shortName": "TEO",
+          "weight": 0.50,
+          "minScore": 5.0,
+          "formulaText": "Si Trabajos ≥ 7: Trabajos (100%). Si Trabajos < 7: 0,70 · Trabajos + 0,30 · Examen",
+          "items": [
+            {
+              "id": "trabajos_teoria",
+              "name": "Trabajos de Teoría (Individuales o en Grupo)",
+              "shortName": "TRAB_TEO",
+              "description": "Trabajos relacionados con los contenidos teóricos. Si nota ≥ 7,0 exime del examen y cuenta el 50% de la asignatura",
+              "weight": 0.70,
+              "maxScore": 10.0,
+              "isGroup": true,
+              "canCarryOver": true
+            },
+            {
+              "id": "examen_teoria",
+              "name": "Examen de Teoría (Exento si Trabajos ≥ 7,0)",
+              "shortName": "EX_TEO",
+              "description": "Examen teórico individual para alumnos con nota de trabajos < 7,0 (o para aspirar a mejorar nota). Pondera el 15% del total",
+              "weight": 0.30,
+              "maxScore": 10.0
+            }
+          ]
+        }
+      ]
+    },
+    "extraordinaria": {
+      "id": "extraordinaria",
+      "name": "Convocatoria Extraordinaria",
+      "description": "Evaluación extraordinaria con conservación de partes aprobadas (≥ 5,0) por separado (Teoría o Prácticas) en la convocatoria ordinaria.",
+      "failPenaltyCap": 4.0,
+      "passingScore": 5.0,
+      "canCarryOverFromOrdinaria": true,
+      "carryOverRulesExplanation": "Se conservan las calificaciones de las partes teórica o práctica aprobadas (≥ 5,0) de forma independiente en la convocatoria ordinaria.",
+      "prerequisites": [],
+      "finalFormulaText": "0,50 · Prácticas + 0,50 · Teoría (si Prácticas ≥ 5 y Teoría ≥ 5; tope 4,0 si no)",
+      "blocks": [
+        {
+          "id": "practica_ext_in",
+          "name": "Parte Práctica Extraordinaria",
+          "shortName": "PRAC_EXT",
+          "weight": 0.50,
+          "minScore": 5.0,
+          "formulaText": "Examen práctico extraordinario (o nota de prácticas ordinaria si ≥ 5,0)",
+          "items": [
+            {
+              "id": "prac_ext",
+              "name": "Examen Práctico Extraordinario / Prácticas Conservadas",
+              "shortName": "EP_EXT",
+              "description": "Prueba práctica de recuperación o calificación de prácticas de la convocatoria ordinaria si se obtuvo al menos 5,0",
+              "weight": 1.0,
+              "minScore": 5.0,
+              "maxScore": 10.0,
+              "canCarryOver": true
+            }
+          ]
+        },
+        {
+          "id": "teoria_ext_in",
+          "name": "Parte Teórica Extraordinaria",
+          "shortName": "TEO_EXT",
+          "weight": 0.50,
+          "minScore": 5.0,
+          "formulaText": "Examen teórico extraordinario (o nota de teoría ordinaria si ≥ 5,0)",
+          "items": [
+            {
+              "id": "teo_ext",
+              "name": "Examen Teórico Extraordinario / Teoría Conservada",
+              "shortName": "ET_EXT",
+              "description": "Prueba teórica de recuperación o calificación de teoría de la convocatoria ordinaria si se obtuvo al menos 5,0",
+              "weight": 1.0,
+              "minScore": 5.0,
+              "maxScore": 10.0,
+              "canCarryOver": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

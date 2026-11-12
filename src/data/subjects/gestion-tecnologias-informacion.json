@@ -1,0 +1,168 @@
+{
+  "id": "gestion-tecnologias-informacion",
+  "name": "Gestión de Tecnologías de la Información",
+  "code": "GIITIN01-4-002",
+  "degree": "Grado en Ingeniería Informática en Tecnologías de la Información",
+  "academicYear": "2026-2027",
+  "sourcePdf": "guias-docentes/GestionTecnologiasInformacion.pdf",
+  "description": "Evaluación continua de 4 partes: Teoría (30%, media geométrica de 2 controles parciales, mín. 5,0), Participación en clase (15%, 80 cuestiones gamificadas), Simulación de procesos ITSM en equipo (15%, mín. 5,0) y Trabajo en equipo (40%, mín. 5,0, asistencia a prácticas ≥ 80%). Convocatoria extraordinaria: Examen global de teoría (60%, mín. 5,0) y Trabajo en equipo conservado (40%). Penalización con tope a 4,5 si no se alcanzan notas mínimas.",
+  "convocatorias": {
+    "ordinaria": {
+      "id": "ordinaria",
+      "name": "Convocatoria Ordinaria",
+      "description": "Evaluación continua a lo largo del cuatrimestre mediante controles teóricos, participación en clase y trabajos en equipo.",
+      "failPenaltyCap": 4.5,
+      "passingScore": 5.0,
+      "prerequisites": [
+        {
+          "id": "asistencia_lab_gti",
+          "name": "Asistencia a Prácticas de Laboratorio",
+          "description": "Asistencia obligatoria con aprovechamiento a un mínimo del 80% de las sesiones de prácticas de laboratorio para superar el trabajo en equipo.",
+          "type": "percentage",
+          "requiredPercentage": 80,
+          "failureMessage": "No se alcanza el 80% de asistencia obligatoria a prácticas de laboratorio. El trabajo en equipo no queda superado (Tope 4.5)."
+        }
+      ],
+      "finalFormulaText": "0,30 · Teoría + 0,15 · Participación + 0,15 · Simulación + 0,40 · Trabajo en Equipo (si TEO ≥ 5, SIM ≥ 5, TRAB ≥ 5 y Asistencia ≥ 80%; tope 4,5 si no)",
+      "blocks": [
+        {
+          "id": "teoria_gti",
+          "name": "Bloque Teórico",
+          "shortName": "TEO",
+          "weight": 0.30,
+          "minScore": 5.0,
+          "formulaText": "√(CP1 · CP2) (media geométrica de los 2 controles parciales)",
+          "items": [
+            {
+              "id": "cp1",
+              "name": "Control Parcial 1 (Mitad de semestre)",
+              "shortName": "CP1",
+              "description": "Primer control parcial de teoría individual",
+              "weight": 0.50,
+              "maxScore": 10.0
+            },
+            {
+              "id": "cp2",
+              "name": "Control Parcial 2 (Final de semestre)",
+              "shortName": "CP2",
+              "description": "Segundo control parcial de teoría individual",
+              "weight": 0.50,
+              "maxScore": 10.0
+            }
+          ]
+        },
+        {
+          "id": "participacion_gti",
+          "name": "Participación en Clase",
+          "shortName": "PART",
+          "weight": 0.15,
+          "formulaText": "Cuestionarios gamificados en aula expositiva (80 cuestiones)",
+          "items": [
+            {
+              "id": "part_clase",
+              "name": "Cuestionarios Gamificados en Aula Expositiva",
+              "shortName": "PART",
+              "description": "Participación activa respondiendo a los cuestionarios de las 80 cuestiones en sesiones expositivas",
+              "weight": 1.0,
+              "maxScore": 10.0
+            }
+          ]
+        },
+        {
+          "id": "simulacion_gti",
+          "name": "Simulación de Procesos ITSM",
+          "shortName": "SIM",
+          "weight": 0.15,
+          "minScore": 5.0,
+          "formulaText": "Memoria y defensa pública del mural (Caso Apolo 13)",
+          "items": [
+            {
+              "id": "sim_apolo",
+              "name": "Simulación ITSM Caso Apolo 13 (Memoria y Defensa)",
+              "shortName": "SIM",
+              "description": "Simulación grupal de procesos ITSM durante la segunda mitad del semestre, con memoria y defensa pública (asistencia obligatoria)",
+              "weight": 1.0,
+              "minScore": 5.0,
+              "maxScore": 10.0,
+              "isGroup": true
+            }
+          ]
+        },
+        {
+          "id": "trabajo_gti",
+          "name": "Trabajo en Equipo",
+          "shortName": "TRAB",
+          "weight": 0.40,
+          "minScore": 5.0,
+          "formulaText": "Gestión completa de un servicio TI (Memoria y Defensa pública)",
+          "items": [
+            {
+              "id": "trab_equipo",
+              "name": "Gestión de Servicio TI (Memoria y Defensa)",
+              "shortName": "TRAB",
+              "description": "Trabajo colaborativo sobre gestión de servicio TI a lo largo de todo el semestre, memoria técnica y defensa pública oral",
+              "weight": 1.0,
+              "minScore": 5.0,
+              "maxScore": 10.0,
+              "isGroup": true,
+              "canCarryOver": true
+            }
+          ]
+        }
+      ]
+    },
+    "extraordinaria": {
+      "id": "extraordinaria",
+      "name": "Convocatoria Extraordinaria",
+      "description": "Examen final global de teoría y conservación de la nota del trabajo en equipo obtenida en la convocatoria ordinaria.",
+      "failPenaltyCap": 4.5,
+      "passingScore": 5.0,
+      "canCarryOverFromOrdinaria": true,
+      "carryOverRulesExplanation": "Solo es posible realizar el trabajo en equipo en la convocatoria ordinaria y se conserva su calificación en las convocatorias extraordinarias (mínimo 5,0).",
+      "prerequisites": [],
+      "finalFormulaText": "0,60 · Examen Teoría + 0,40 · Trabajo en Equipo (si Teoría ≥ 5 y Trabajo ≥ 5; tope 4,5 si no)",
+      "blocks": [
+        {
+          "id": "teoria_ext_gti",
+          "name": "Examen Final Global de Teoría",
+          "shortName": "ET_EXT",
+          "weight": 0.60,
+          "minScore": 5.0,
+          "formulaText": "Examen final extraordinario de teoría",
+          "items": [
+            {
+              "id": "ex_teoria_ext",
+              "name": "Examen Final Global de Teoría Extraordinario",
+              "shortName": "ET_EXT",
+              "description": "Prueba escrita individual sobre el contenido teórico completo de la asignatura",
+              "weight": 1.0,
+              "minScore": 5.0,
+              "maxScore": 10.0
+            }
+          ]
+        },
+        {
+          "id": "trabajo_ext_gti",
+          "name": "Trabajo en Equipo (Conservado)",
+          "shortName": "TRAB_EXT",
+          "weight": 0.40,
+          "minScore": 5.0,
+          "formulaText": "Calificación obtenida en el trabajo en equipo durante la convocatoria ordinaria",
+          "items": [
+            {
+              "id": "trab_equipo_ext",
+              "name": "Trabajo en Equipo (Calificación Conservada)",
+              "shortName": "TRAB_EXT",
+              "description": "Nota del trabajo en equipo conservada de la convocatoria ordinaria (requiere mínimo 5,0)",
+              "weight": 1.0,
+              "minScore": 5.0,
+              "maxScore": 10.0,
+              "isGroup": true,
+              "canCarryOver": true
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

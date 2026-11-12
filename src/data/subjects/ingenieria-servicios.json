@@ -1,0 +1,201 @@
+{
+  "id": "ingenieria-servicios",
+  "name": "Ingeniería de Servicios",
+  "code": "GIIS-IS",
+  "degree": "Grado en Ingeniería Informática",
+  "academicYear": "2026-2027",
+  "sourcePdf": "guias-docentes/IngenieriaServicios.pdf",
+  "description": "Evaluación continua dividida en teoría (60%) y prácticas de laboratorio y trabajo grupal (40%), con exigencia de notas mínimas y penalización de tope a 4,0.",
+  "convocatorias": {
+    "ordinaria": {
+      "id": "ordinaria",
+      "name": "Convocatoria Ordinaria",
+      "description": "Evaluación continua a lo largo del cuatrimestre mediante controles teóricos y prácticas.",
+      "failPenaltyCap": 4.0,
+      "passingScore": 5.0,
+      "prerequisites": [
+        {
+          "id": "asistencia_lab",
+          "name": "Asistencia a Laboratorios",
+          "description": "Asistencia obligatoria a un mínimo del 75% de las sesiones de laboratorio.",
+          "type": "percentage",
+          "requiredPercentage": 75,
+          "failureMessage": "No se alcanza el 75% de asistencia mínima a laboratorios. La convocatoria ordinaria queda suspendida (Tope 4.0)."
+        }
+      ],
+      "finalFormulaText": "0,60 · TEO + 0,40 · PRAC  (si se cumplen mínimos: TEO≥5, PRAC≥5, TG≥5, TPI≥5, Asistencia≥75%)",
+      "blocks": [
+        {
+          "id": "teoria",
+          "name": "Bloque Teórico",
+          "shortName": "TEO",
+          "weight": 0.60,
+          "minScore": 5.0,
+          "formulaText": "(T1 + T2 + T3) / 3",
+          "items": [
+            {
+              "id": "t1",
+              "name": "Control Teórico 1 (Temas 1-2)",
+              "shortName": "T1",
+              "description": "Prueba escrita individual al finalizar el tema T2",
+              "weight": 0.333333,
+              "maxScore": 10.0
+            },
+            {
+              "id": "t2",
+              "name": "Control Teórico 2 (Temas 3-5)",
+              "shortName": "T2",
+              "description": "Prueba escrita individual al finalizar el tema T5",
+              "weight": 0.333333,
+              "maxScore": 10.0
+            },
+            {
+              "id": "t3",
+              "name": "Control Teórico 3 (Temas 6-7)",
+              "shortName": "T3",
+              "description": "Prueba escrita individual al finalizar el tema T7",
+              "weight": 0.333334,
+              "maxScore": 10.0
+            }
+          ]
+        },
+        {
+          "id": "practica",
+          "name": "Bloque Práctico",
+          "shortName": "PRAC",
+          "weight": 0.40,
+          "minScore": 5.0,
+          "formulaText": "0,75 · ((PP1 + PP2 + (Tarea1 + Tarea2)/2) / 3) + 0,25 · TG",
+          "items": [
+            {
+              "id": "tg",
+              "name": "Trabajo en Grupo (Memoria y Defensa)",
+              "shortName": "TG",
+              "description": "Memoria y defensa grupal al finalizar las prácticas. Requiere nota mínima de 5,0.",
+              "weight": 0.25,
+              "minScore": 5.0,
+              "maxScore": 10.0,
+              "isGroup": true,
+              "canCarryOver": true
+            }
+          ],
+          "subBlocks": [
+            {
+              "id": "practica_individual",
+              "name": "Evaluación Individual de Prácticas",
+              "shortName": "PI",
+              "weight": 0.75,
+              "formulaText": "(PP1 + PP2 + TPI) / 3",
+              "items": [
+                {
+                  "id": "pp1",
+                  "name": "Prueba Práctica 1 (Servicios Web)",
+                  "shortName": "PP1",
+                  "description": "Evaluación práctica individual tras finalizar el tema de servicios web",
+                  "weight": 0.333333,
+                  "maxScore": 10.0
+                },
+                {
+                  "id": "pp2",
+                  "name": "Prueba Práctica 2 (Final)",
+                  "shortName": "PP2",
+                  "description": "Evaluación práctica individual al final de la última sesión",
+                  "weight": 0.333333,
+                  "maxScore": 10.0
+                },
+                {
+                  "id": "tarea1",
+                  "name": "Tarea Práctica Individual 1",
+                  "shortName": "Tarea 1",
+                  "description": "Propuesta en semana 4, entrega última semana (promedia con Tarea 2; nota mínima conjunta TPI ≥ 5,0)",
+                  "weight": 0.166667,
+                  "maxScore": 10.0
+                },
+                {
+                  "id": "tarea2",
+                  "name": "Tarea Práctica Individual 2",
+                  "shortName": "Tarea 2",
+                  "description": "Propuesta en semana 9, entrega última semana (promedia con Tarea 1; nota mínima conjunta TPI ≥ 5,0)",
+                  "weight": 0.166667,
+                  "maxScore": 10.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "extraordinaria": {
+      "id": "extraordinaria",
+      "name": "Convocatoria Extraordinaria",
+      "description": "Examen extraordinario con conservación de partes aprobadas (≥ 5,0) en la convocatoria ordinaria.",
+      "failPenaltyCap": 4.0,
+      "passingScore": 5.0,
+      "canCarryOverFromOrdinaria": true,
+      "carryOverRulesExplanation": "Se conserva la nota de la convocatoria ordinaria en las partes que tengan nota ≥ 5,0 (Teoría, Trabajo en Grupo, Tareas Individuales).",
+      "prerequisites": [],
+      "finalFormulaText": "0,60 · ET + 0,40 · (0,25 · TG + 0,25 · TPI + 0,50 · EP)  (si ET≥5, TG≥5, TPI≥5, EP≥5)",
+      "blocks": [
+        {
+          "id": "teoria_ext",
+          "name": "Parte Teórica Extraordinaria",
+          "shortName": "ET",
+          "weight": 0.60,
+          "minScore": 5.0,
+          "formulaText": "ET (o nota TEO ordinaria si TEO ≥ 5,0)",
+          "items": [
+            {
+              "id": "et",
+              "name": "Examen Teórico Extraordinario",
+              "shortName": "ET",
+              "description": "Prueba presencial escrita sobre todos los contenidos teóricos (nota mínima obligatoria de 5,0)",
+              "weight": 1.0,
+              "minScore": 5.0,
+              "maxScore": 10.0,
+              "canCarryOver": true
+            }
+          ]
+        },
+        {
+          "id": "practica_ext",
+          "name": "Parte Práctica Extraordinaria",
+          "shortName": "PRAC_EXT",
+          "weight": 0.40,
+          "minScore": 5.0,
+          "formulaText": "0,25 · TG + 0,25 · TPI + 0,50 · EP",
+          "items": [
+            {
+              "id": "tg_ext",
+              "name": "Trabajo en Grupo (Memoria y defensa individual)",
+              "shortName": "TG",
+              "description": "Reentrega mejorada de memoria y defensa individual (conservada si TG ordinaria ≥ 5,0)",
+              "weight": 0.25,
+              "minScore": 5.0,
+              "maxScore": 10.0,
+              "canCarryOver": true
+            },
+            {
+              "id": "tpi_ext",
+              "name": "Tareas Prácticas Individuales (Reentrega)",
+              "shortName": "TPI",
+              "description": "Reentrega mejorada de las tareas individuales (conservada si TPI ordinaria ≥ 5,0)",
+              "weight": 0.25,
+              "minScore": 5.0,
+              "maxScore": 10.0,
+              "canCarryOver": true
+            },
+            {
+              "id": "ep",
+              "name": "Examen Práctico Global",
+              "shortName": "EP",
+              "description": "Examen práctico presencial sobre el contenido de todas las prácticas (mínimo 5,0)",
+              "weight": 0.50,
+              "minScore": 5.0,
+              "maxScore": 10.0
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
